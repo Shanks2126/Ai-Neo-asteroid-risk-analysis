@@ -1,11 +1,14 @@
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
 # -----------------------------
 # CONFIGURATION
 # -----------------------------
 NUM_SAMPLES = 10000
-OUTPUT_PATH = "../../data/raw/asteroid_raw.csv"
+OUTPUT_DIR = Path(__file__).parent.parent.parent / "data" / "raw"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_PATH = OUTPUT_DIR / "asteroid_raw.csv"
 
 np.random.seed(42)
 

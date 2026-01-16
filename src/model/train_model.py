@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -10,9 +11,10 @@ from sklearn.metrics import classification_report, accuracy_score
 # -----------------------------
 # CONFIGURATION
 # -----------------------------
-DATA_PATH = "../../data/raw/asteroid_raw.csv"
-MODEL_OUTPUT_PATH = "risk_model.pkl"
-SCALER_OUTPUT_PATH = "scaler.pkl"
+BASE_DIR = Path(__file__).parent.parent.parent
+DATA_PATH = BASE_DIR / "data" / "raw" / "asteroid_raw.csv"
+MODEL_OUTPUT_PATH = Path(__file__).parent / "risk_model.pkl"
+SCALER_OUTPUT_PATH = Path(__file__).parent / "scaler.pkl"
 
 # -----------------------------
 # LOAD DATA
